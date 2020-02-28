@@ -2,7 +2,7 @@
  * @Author: huangzibin
  * @Date: 2020-02-27 22:44:55
  * @Last Modified by: huangzibin
- * @Last Modified time: 2020-02-27 22:47:14
+ * @Last Modified time: 2020-02-28 16:40:26
  */
 
 <template>
@@ -25,7 +25,7 @@
     },
     mounted() {
       this.scroll = new BScroll(this.$refs.wrapper, {
-        
+        click: true,
       })
     }
   }
