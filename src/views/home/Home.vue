@@ -2,7 +2,7 @@
  * @Author: huangzibin
  * @Date: 2020-02-26 17:58:14
  * @Last Modified by: huangzibin
- * @Last Modified time: 2020-02-28 17:28:24
+ * @Last Modified time: 2020-03-06 19:10:27
  */
 <template>
   <div id="home">
@@ -21,8 +21,9 @@
           icon="search"
           class="btn-selete"
           style="border-right:1.5px solid #fff;"
+          @click="coClick"
         >企业选择</van-button>
-        <van-button color="#4EA0F7" icon="description">企业信息</van-button>
+        <van-button color="#4EA0F7" icon="description" @click="coInfo">企业信息</van-button>
       </div>
     </div>
 
@@ -30,7 +31,7 @@
       <span>企业档案</span>
     </div>
     <scroll class="content">
-      <van-grid square :clickable="true" :border="false" >
+      <van-grid square :clickable="true" :border="false">
         <van-grid-item
           v-for="(item,index) in procData"
           :key="index"
@@ -38,7 +39,6 @@
           :text="item.procName"
           url="https://www.baidu.com"
           class="process"
-         
         />
       </van-grid>
     </scroll>
@@ -58,78 +58,105 @@ export default {
     [Grid.name]: Grid,
     [GridItem.name]: GridItem,
     NavBar,
-    Scroll,
-    
+    Scroll
   },
   data() {
     return {
-      procData:[
+      procData: [
         {
-          "procName": "企业基本信息",
-          "procIcon": "photo-o",
-        },{
-          "procName": "企业制度",
-          "procIcon": "photo-o",
-        },{
-          "procName": "许可产品信息",
-          "procIcon": "photo-o",
-        },{
-          "procName": "产品信息",
-          "procIcon": "photo-o",
-        },{
-          "procName": "物料清单",
-          "procIcon": "photo-o",
-        },{
-          "procName": "供应商信息",
-          "procIcon": "photo-o",
-        },{
-          "procName": "供应物料信息",
-          "procIcon": "photo-o",
-        },{
-          "procName": "原料入库信息",
-          "procIcon": "photo-o",
-        },{
-          "procName": "原料出库信息",
-          "procIcon": "photo-o",
-        },{
-          "procName": "生产任务信息",
-          "procIcon": "photo-o",
-        },{
-          "procName": "检验报告",
-          "procIcon": "photo-o",
-        },{
-          "procName": "产品流向信息",
-          "procIcon": "photo-o",
-        },{
-          "procName": "产品留样信息",
-          "procIcon": "photo-o",
-        },{
-          "procName": "退换货信息表",
-          "procIcon": "photo-o",
-        },{
-          "procName": "抽样检验记录",
-          "procIcon": "photo-o",
-        },{
-          "procName": "监督检查记录",
-          "procIcon": "photo-o",
-        },{
-          "procName": "行政处罚记录",
-          "procIcon": "photo-o",
-        },{
-          "procName": "投诉举报",
-          "procIcon": "photo-o",
-        },{
-          "procName": "企业风险评级",
-          "procIcon": "photo-o",
-        },{
-          "procName": "安全管理员",
-          "procIcon": "photo-o",
-        },{
-          "procName": "从业管理员",
-          "procIcon": "photo-o",
+          procName: "企业基本信息",
+          procIcon: "photo-o"
+        },
+        {
+          procName: "企业制度",
+          procIcon: "photo-o"
+        },
+        {
+          procName: "许可产品信息",
+          procIcon: "photo-o"
+        },
+        {
+          procName: "产品信息",
+          procIcon: "photo-o"
+        },
+        {
+          procName: "物料清单",
+          procIcon: "photo-o"
+        },
+        {
+          procName: "供应商信息",
+          procIcon: "photo-o"
+        },
+        {
+          procName: "供应物料信息",
+          procIcon: "photo-o"
+        },
+        {
+          procName: "原料入库信息",
+          procIcon: "photo-o"
+        },
+        {
+          procName: "原料出库信息",
+          procIcon: "photo-o"
+        },
+        {
+          procName: "生产任务信息",
+          procIcon: "photo-o"
+        },
+        {
+          procName: "检验报告",
+          procIcon: "photo-o"
+        },
+        {
+          procName: "产品流向信息",
+          procIcon: "photo-o"
+        },
+        {
+          procName: "产品留样信息",
+          procIcon: "photo-o"
+        },
+        {
+          procName: "退换货信息表",
+          procIcon: "photo-o"
+        },
+        {
+          procName: "抽样检验记录",
+          procIcon: "photo-o"
+        },
+        {
+          procName: "监督检查记录",
+          procIcon: "photo-o"
+        },
+        {
+          procName: "行政处罚记录",
+          procIcon: "photo-o"
+        },
+        {
+          procName: "投诉举报",
+          procIcon: "photo-o"
+        },
+        {
+          procName: "企业风险评级",
+          procIcon: "photo-o"
+        },
+        {
+          procName: "安全管理员",
+          procIcon: "photo-o"
+        },
+        {
+          procName: "从业管理员",
+          procIcon: "photo-o"
         }
       ]
     };
+  },
+  methods: {
+    coClick() {
+      this.$router.push('/coselect/')
+    },
+    coInfo() {
+      this.$router.push('/coinfo/')
+    }
   }
 };
 </script>
@@ -208,9 +235,8 @@ export default {
   right: 0;
   bottom: 0;
 }
-.process .van-grid-item__text{
+.process .van-grid-item__text {
   color: #4ea0f7;
   font-size: 10px;
 }
-
 </style>
