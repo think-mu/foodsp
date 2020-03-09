@@ -2,7 +2,7 @@
  * @Author: huangzibin
  * @Date: 2020-02-26 17:58:14
  * @Last Modified by: huangzibin
- * @Last Modified time: 2020-03-06 19:10:27
+ * @Last Modified time: 2020-03-09 16:38:07
  */
 <template>
   <div id="home">
@@ -155,7 +155,7 @@ export default {
       this.$router.push('/coselect/')
     },
     coInfo() {
-      this.$router.push('/coinfo/')
+      this.$router.push('/coinfoselect/')
     }
   }
 };

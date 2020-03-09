@@ -1,18 +1,8 @@
 <template>
   <div class="info">
-   
-    <nav-bar class="home-nav">
-      <div slot="left">
-         <span class="cancel">取消</span>
-      </div>
-      <div slot="center">
-          广州市金稻食品有限公司
-      </div>
-      <div slot="right">
-          <span class="true">确定</span>
-      </div>
-    </nav-bar>
-   
+    <van-cell-group class="top">
+      <van-cell title="广州市金稻食品有限公司" center icon="hotel-o"/>
+    </van-cell-group>
     <van-search
       v-model="value"
       shape="round"
@@ -23,9 +13,9 @@
     >
       <div slot="action" @click="onSearch">搜索</div>
     </van-search>
-    
+    <van-area :area-list="areaList" value="110101" visible-item-count="3" item-height="30"/>
     <scroll class="content">
-      <van-cell>
+      <van-cell is-link>
         <div>
         <span class="title">企业名称:</span>
         <span class="text">广州市金稻食品有限公司</span>
@@ -40,35 +30,7 @@
         </div>
       </van-cell>
 
-      <van-cell>
-        <div>
-        <span class="title">企业名称:</span>
-        <span class="text">广州市金稻食品有限公司</span>
-        </div>
-        <div>
-        <span class="title">企业账号:</span>
-        <span class="text">B10258845</span>
-        </div>
-        <div>
-        <span class="title">所属辖区:</span>
-        <span class="text">广州市白云区</span>
-        </div>
-      </van-cell>
-      <van-cell>
-        <div>
-        <span class="title">企业名称:</span>
-        <span class="text">广州市金稻食品有限公司</span>
-        </div>
-        <div>
-        <span class="title">企业账号:</span>
-        <span class="text">B10258845</span>
-        </div>
-        <div>
-        <span class="title">所属辖区:</span>
-        <span class="text">广州市白云区</span>
-        </div>
-      </van-cell>
-      <van-cell>
+      <van-cell is-link>
         <div>
         <span class="title">企业名称:</span>
         <span class="text">广州市金稻食品有限公司</span>
@@ -83,7 +45,7 @@
         </div>
       </van-cell>
 
-      <van-cell>
+      <van-cell is-link>
         <div>
         <span class="title">企业名称:</span>
         <span class="text">广州市金稻食品有限公司</span>
@@ -97,7 +59,7 @@
         <span class="text">广州市白云区</span>
         </div>
       </van-cell>
-       <van-cell>
+       <van-cell is-link>
         <div>
         <span class="title">企业名称:</span>
         <span class="text">广州市金稻食品有限公司</span>
@@ -111,7 +73,7 @@
         <span class="text">广州市白云区</span>
         </div>
       </van-cell> 
-       <van-cell>
+       <van-cell is-link>
         <div>
         <span class="title">企业名称:</span>
         <span class="text">广州市金稻食品有限公司</span>
@@ -134,7 +96,6 @@
 import { Button, Icon, Grid, GridItem, Search, Cell, CellGroup, Area } from "vant";
 import areaData from "common/area.js"
 import Scroll from "components/common/scroll/Scroll";
-import NavBar from "components/common/navbar/NavBar";
 
 export default {
   name: "CoInfo",
@@ -143,9 +104,7 @@ export default {
     [Cell.name]: Cell,
     [CellGroup.name]: CellGroup,
     [Area.name]: Area,
-    [Button.name]: Button,
     Scroll,
-    NavBar
   },
   data() {
     return {
@@ -186,11 +145,11 @@ export default {
 
 .content {
   z-index: 99;
-  margin-top: 55px;
+  margin-top: 108px;
   /* height: 499px; */
   overflow: hidden;
   position: absolute;
-  top: 63px;
+  top: 168px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -198,22 +157,7 @@ export default {
 .content .text {
   margin-left: 10px;
 }
-
-.van-search {
-   margin-top: 5px;
-}
-
-.home-nav .cancel {
-  line-height: 54px;
-  color: rgb(255, 59, 59);
-  font-size: 14px;
-}
-.home-nav .true {
-  line-height: 54px;
-  color: #1989FA;
-  font-size: 14px;
-}
-.home-nav {
-  height: 50px;
+.content i {
+  margin: auto 0;
 }
 </style>
