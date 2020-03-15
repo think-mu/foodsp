@@ -1,3 +1,10 @@
+/*
+ * @Author: huangzibin
+ * @Date: 2020-03-15 22:12:40
+ * @Last Modified by: huangzibin
+ * @Last Modified time: 2020-03-15 22:12:45
+ */
+
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
@@ -5,6 +12,7 @@ const Home = () => import('views/home/Home')
 const CoSelect = () => import('views/company/CoSelect')
 const CoInfoSelect = () => import('views/company/CoInfoSelect')
 const CoInfo = () => import('views/company/CoInfo')
+const BaseInfo = () => import('views/module/BaseInfo')
 
 Vue.use(VueRouter)
 
@@ -39,6 +47,13 @@ const routes=[
     component: CoInfo,
     meta: {
       title: '企业信息'
+    }
+  },
+  {
+    path: '/baseinfo',
+    component: BaseInfo,
+    meta: {
+      title: '企业基础信息'
     }
   }
 ]

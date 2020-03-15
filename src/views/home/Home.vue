@@ -2,7 +2,7 @@
  * @Author: huangzibin
  * @Date: 2020-02-26 17:58:14
  * @Last Modified by: huangzibin
- * @Last Modified time: 2020-03-09 16:38:07
+ * @Last Modified time: 2020-03-15 22:11:03
  */
 <template>
   <div id="home">
@@ -37,7 +37,7 @@
           :key="index"
           :icon="item.procIcon"
           :text="item.procName"
-          url="https://www.baidu.com"
+          :to="item.procPage"
           class="process"
         />
       </van-grid>
@@ -48,6 +48,7 @@
 <script>
 import { Button, Icon, Grid, GridItem } from "vant"; //由main.js 引入注册
 import NavBar from "components/common/navbar/NavBar";
+import menuData from "common/menu.js";
 import Scroll from "components/common/scroll/Scroll";
 
 export default {
@@ -62,92 +63,7 @@ export default {
   },
   data() {
     return {
-      procData: [
-        {
-          procName: "企业基本信息",
-          procIcon: "photo-o"
-        },
-        {
-          procName: "企业制度",
-          procIcon: "photo-o"
-        },
-        {
-          procName: "许可产品信息",
-          procIcon: "photo-o"
-        },
-        {
-          procName: "产品信息",
-          procIcon: "photo-o"
-        },
-        {
-          procName: "物料清单",
-          procIcon: "photo-o"
-        },
-        {
-          procName: "供应商信息",
-          procIcon: "photo-o"
-        },
-        {
-          procName: "供应物料信息",
-          procIcon: "photo-o"
-        },
-        {
-          procName: "原料入库信息",
-          procIcon: "photo-o"
-        },
-        {
-          procName: "原料出库信息",
-          procIcon: "photo-o"
-        },
-        {
-          procName: "生产任务信息",
-          procIcon: "photo-o"
-        },
-        {
-          procName: "检验报告",
-          procIcon: "photo-o"
-        },
-        {
-          procName: "产品流向信息",
-          procIcon: "photo-o"
-        },
-        {
-          procName: "产品留样信息",
-          procIcon: "photo-o"
-        },
-        {
-          procName: "退换货信息表",
-          procIcon: "photo-o"
-        },
-        {
-          procName: "抽样检验记录",
-          procIcon: "photo-o"
-        },
-        {
-          procName: "监督检查记录",
-          procIcon: "photo-o"
-        },
-        {
-          procName: "行政处罚记录",
-          procIcon: "photo-o"
-        },
-        {
-          procName: "投诉举报",
-          procIcon: "photo-o"
-        },
-        {
-          procName: "企业风险评级",
-          procIcon: "photo-o"
-        },
-        {
-          procName: "安全管理员",
-          procIcon: "photo-o"
-        },
-        {
-          procName: "从业管理员",
-          procIcon: "photo-o"
-        }
-      ]
+      procData:menuData.procData
     };
   },
   methods: {
@@ -167,6 +83,7 @@ export default {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: #ffffff;
 }
 .top {
   position: relative;

@@ -1,3 +1,10 @@
+/*
+ * @Author: huangzibin
+ * @Date: 2020-03-15 22:12:07
+ * @Last Modified by: huangzibin
+ * @Last Modified time: 2020-03-15 22:12:57
+ */
+
 <template>
 
   <div class="info">
