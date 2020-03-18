@@ -2,7 +2,7 @@
  * @Author: huangzibin
  * @Date: 2020-03-15 21:50:26
  * @Last Modified by: huangzibin
- * @Last Modified time: 2020-03-15 22:08:06
+ * @Last Modified time: 2020-03-16 10:45:02
  */
 export default {
   procData: [
@@ -14,7 +14,7 @@ export default {
     {
       procName: "企业制度",
       procIcon: "photo-o",
-      procPage: "/coinfo/",
+      procPage: "/corule/",
     },
     {
       procName: "许可产品信息",
@@ -109,7 +109,7 @@ export default {
     {
       procName: "从业管理员",
       procIcon: "photo-o",
-      procPage: "/baseinfo/",
+      procPage: "/coinfo/",
     }
   ]
 }

@@ -2,7 +2,7 @@
  * @Author: huangzibin
  * @Date: 2020-03-15 22:12:40
  * @Last Modified by: huangzibin
- * @Last Modified time: 2020-03-15 22:12:45
+ * @Last Modified time: 2020-03-16 10:44:55
  */
 
 import Vue from 'vue'
@@ -13,6 +13,7 @@ const CoSelect = () => import('views/company/CoSelect')
 const CoInfoSelect = () => import('views/company/CoInfoSelect')
 const CoInfo = () => import('views/company/CoInfo')
 const BaseInfo = () => import('views/module/BaseInfo')
+const CoRule = () => import('views/module/CoRule')
 
 Vue.use(VueRouter)
 
@@ -52,6 +53,13 @@ const routes=[
   {
     path: '/baseinfo',
     component: BaseInfo,
+    meta: {
+      title: '企业基础信息'
+    }
+  },
+  {
+    path: '/corule',
+    component: CoRule,
     meta: {
       title: '企业基础信息'
     }
